@@ -250,10 +250,6 @@ PlayMode::PlayMode() : scene(*level_scene) {
 	for (Scene::Transform* bowl : bowl_burnt_rices)
 		bowl->position = off_screen;
 
-	for (Ticket ticket : tickets) {
-		ticket.type = TICKET_NONE;
-	}
-
 	update_camera();
 
 	//start music loop playing:
