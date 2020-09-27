@@ -3,11 +3,11 @@ BLENDER="C:\Program Files\Blender Foundation\Blender 2.90\blender.exe"
 DIST=../dist
 
 all : \
-    $(DIST)/hexapod.pnct \
-    $(DIST)/hexapod.scene \
+    $(DIST)/level1.pnct \
+    $(DIST)/level1.scene \
 
-$(DIST)/hexapod.scene : hexapod.blend export-scene.py
-    $(BLENDER) --background --python export-scene.py -- "hexapod.blend:Main" "$(DIST)/hexapod.scene"
+$(DIST)/level1.scene : game.blend export-scene.py
+    $(BLENDER) --background --python export-scene.py -- "game.blend:Level1" "$(DIST)/level1.scene"
 
-$(DIST)/hexapod.pnct : hexapod.blend export-meshes.py
-    $(BLENDER) --background --python export-meshes.py -- "hexapod.blend:Main" "$(DIST)/hexapod.pnct" 
+$(DIST)/level1.pnct : game.blend export-meshes.py
+    $(BLENDER) --background --python export-meshes.py -- "game.blend:Level1" "$(DIST)/level1.pnct"
